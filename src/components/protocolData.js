@@ -213,27 +213,21 @@ const ProtocolData = () => {
         </BigNumbers>  */}
         <BigNumbers>
           <span>
-            $83B<span style={{ opacity: '0.1' }}>+</span>
+            3s
           </span>
-          <p style={{ fontSize: '14px' }}>All Time Volume</p>
+          <p style={{ fontSize: '14px' }}>Transaction Time</p>
         </BigNumbers>
         <BigNumbers>
           <span>
-            72K<span style={{ opacity: '0.1' }}>+</span>
+            $0.0001
           </span>
-          <p style={{ fontSize: '14px' }}>Liquidity Providers</p>
+          <p style={{ fontSize: '14px' }}>Transaction Cost</p>
         </BigNumbers>
         <BigNumbers>
           <span>
-            29M<span style={{ opacity: '0.1' }}>+</span>
+            7
           </span>
-          <p style={{ fontSize: '14px' }}>All Time Trades</p>
-        </BigNumbers>
-        <BigNumbers>
-          <span>
-            200<span style={{ opacity: '0.1' }}>+</span>
-          </span>
-          <p style={{ fontSize: '14px' }}>Defi Integrations</p>
+          <p style={{ fontSize: '14px' }}># of Farming Pairs</p>
         </BigNumbers>
       </div>
     </Numbers>

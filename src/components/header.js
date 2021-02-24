@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 1.5rem 20.1rem 1.5rem 20.1rem;
   width: 100%;
   z-index: 3;
   position: sticky;
@@ -256,8 +256,7 @@ const Header = props => {
             textDecoration: `none`
           }}
         >
-          <StyledUni />
-          <HeaderText>Uniswap</HeaderText>
+          <HeaderText>Levinswap</HeaderText>
         </StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
@@ -272,19 +271,6 @@ const Header = props => {
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </StyledButton>
         </HideSmall>
-
-        {props.path !== undefined && (
-          <StyledTradeLink
-            style={{
-              background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
-              color: 'white'
-            }}
-            target="_blank"
-            href="https://app.uniswap.org/"
-          >
-            Use Uniswap
-          </StyledTradeLink>
-        )}
       </StyledNav>
     </StyledHeader>
   )

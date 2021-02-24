@@ -12,6 +12,7 @@ import ProtocolData from '../components/protocolData'
 import { useDarkMode } from '../contexts/Application'
 
 import { CardBGImage, CardFade, CardNoise, StyledExternalLink } from '../components/utils'
+import { CardBGImage_2 } from '../components/utils_2'
 
 const BGCard = styled.span`
   width: 100vw;
@@ -282,46 +283,47 @@ const IndexPage = props => {
       <BGCard>
         <CardNoise />
         <CardBGImage isDark={isDark} />
+        <CardBGImage_2 isDark={isDark} />
         <CardFade />
       </BGCard>
       <SEO
         title="Home"
         path={props.location.pathname}
-        description={'A fully decentralized protocol for automated liquidity provision on Ethereum'}
+        description={'A fully decentralized protocol for automated liquidity provision on xDai'}
       />
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>Decentralized Trading Protocol</StyledBodyTitle>
           <StyledBodySubTitle style={{ marginBottom: '3rem' }}>
-            Guaranteed liquidity for millions of users and hundreds of Ethereum applications.
+            Fast & inexpensive transactions powered by the xDai blockchain.
           </StyledBodySubTitle>
 
           <StyledItemRow>
             <Button
               style={{
-                background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
+                background: `linear-gradient(128.17deg, #a27395 -14.78%, #463e53 110.05%)`,
                 color: 'white',
                 fontSize: '20px'
               }}
               target="_blank"
-              href="https://app.uniswap.org/"
+              href="https://app.levinswap.org/"
             >
-              Use Uniswap
+              Use Levinswap
             </Button>
             <Button
               outlined
-              to="/docs"
-              as={Link}
+              target="_blank"
+              href="https://wiki.levinswap.org/"
               style={{
                 fontSize: '20px'
               }}
             >
-              Documentation
+              Wiki
             </Button>
             <Button
               outlined
-              to="/faq"
-              as={Link}
+              target="_blank"
+              href="https://wiki.levinswap.org/faq"
               style={{
                 fontSize: '20px'
               }}
@@ -369,7 +371,7 @@ const StyledSectionTitle = styled.h1`
 const DeveloperSection = props => {
   return (
     <>
-      <StyledSectionTitle>A growing protocol ecosystem.</StyledSectionTitle>
+      <StyledSectionTitle>New era for .</StyledSectionTitle>
       <StyledBodySubText>
         The Uniswap protocol empowers developers, liquidity providers and traders to participate in a financial
         marketplace that is open and accessible to all.
