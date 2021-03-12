@@ -90,7 +90,7 @@ export const ETH_PRICE = block => {
 
 const APOLLO_QUERY = gql`
   {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
+    LevinswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
       totalVolumeUSD
       totalLiquidityUSD
       pairCount
@@ -101,10 +101,10 @@ const APOLLO_QUERY = gql`
   }
 `
 
-export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
+export const Levinswap_GLOBALS_24HOURS_AGO_QUERY = block => {
   let queryString = `
-  query uniswapFactory {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
+  query LevinswapFactory {
+    LevinswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
       totalVolumeUSD
       totalLiquidityUSD
       pairCount
@@ -136,12 +136,12 @@ export default function Ticker() {
   useEffect(() => {
     async function getData() {
       let result = await client.query({
-        query: UNISWAP_GLOBALS_24HOURS_AGO_QUERY(oneDayBackBlock),
+        query: Levinswap_GLOBALS_24HOURS_AGO_QUERY(oneDayBackBlock),
 
         fetchPolicy: 'cache-first'
       })
       if (result) {
-        setOnedayResult(result?.data?.uniswapFactory)
+        setOnedayResult(result?.data?.LevinswapFactory)
       }
     }
     if (oneDayBackBlock) {
@@ -158,7 +158,7 @@ export default function Ticker() {
   }
 
   if (data && oneDayResult) {
-    const volume24Hour = parseFloat(data?.uniswapFactory?.totalVolumeUSD) - parseFloat(oneDayResult?.totalVolumeUSD)
+    const volume24Hour = parseFloat(data?.LevinswapFactory?.totalVolumeUSD) - parseFloat(oneDayResult?.totalVolumeUSD)
 
     UniStats.volume = [
       new Intl.NumberFormat('en-US', {
@@ -176,10 +176,10 @@ export default function Ticker() {
         notation: 'compact',
         compactDisplay: 'short'
         // maximumSignificantDigits: 5
-      }).format(data.uniswapFactory.totalLiquidityUSD),
+      }).format(data.LevinswapFactory.totalLiquidityUSD),
       ' Total Liquidity'
     ]
-    UniStats.exchanges = [Number.parseFloat(data?.uniswapFactory?.pairCount), ' Total Pools']
+    UniStats.exchanges = [Number.parseFloat(data?.LevinswapFactory?.pairCount), ' Total Pools']
 
     UniStats.ETHprice = [
       new Intl.NumberFormat('en-US', {
@@ -208,7 +208,7 @@ export default function Ticker() {
 
   return (
     initialized && (
-      <MarqueeWrapper href="https://uniswap.info/" className="ticker" data-speed="0.25" data-pausable="true">
+      <MarqueeWrapper href="https://Levinswap.info/" className="ticker" data-speed="0.25" data-pausable="true">
         <div>
           {Array.from({ length: totalElements }).map((_, idx) => {
             return <AnimatingEl stat={UniStats.key((idx % 4) + 1)} key={idx} />

@@ -81,13 +81,13 @@ export default ({ children, className }) => {
                   <br key={i} />
                 )
               ) : (
-                <div key={i} {...getLineProps({ line, key: i })}>
-                  {/* <LineNo>{i + 1}</LineNo> */}
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              )
+                  <div key={i} {...getLineProps({ line, key: i })}>
+                    {/* <LineNo>{i + 1}</LineNo> */}
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                )
             })}
           </Pre>
           <CopyButton onClick={setCopied}>{isCopied ? 'Copied' : 'Copy'}</CopyButton>

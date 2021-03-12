@@ -1,7 +1,7 @@
 {
   "name": "@uniswap/org",
   "private": true,
-  "description": "Uniswap homepage and knowledgebase",
+  "description": "Levinswap Homepage and Knowledgebase",
   "version": "0.1.0",
   "author": "Callil Capuozzo <callil.capuozzo@gmail.com>",
   "engines": {
@@ -111,9 +111,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/uniswap-org"
+    "url": "https://github.com/Levinswap/Levinswap-org"
   },
   "bugs": {
-    "url": "https://github.com/Uniswap/uniswap-org/issues"
+    "url": "https://github.com/Levinswap/Levinswap-org/issues"
   }
 }

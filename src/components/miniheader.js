@@ -12,8 +12,6 @@ import CloseIcon from '../images/x.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Github from '../images/githubicon.inline.svg'
 
-import SidebarV2 from './sidebarV2'
-import SidebarV1 from './sidebarV1'
 import { useMediaQuery } from '@react-hook/media-query'
 
 import { useDarkMode } from '../contexts/Application'
@@ -224,23 +222,23 @@ const Header = props => {
           {props.path && props.path !== '/' && props.path !== '' && (
             <>
               <StyledNavTitle to={'/' + props.path.split('/')[1]}>
-                {props.path.length > 20 ? 'Docs /' : 'Uniswap Docs /'}
+                {props.path.length > 20 ? 'Docs /' : 'Levinswap Docs /'}
               </StyledNavTitle>
               <StyledNavTitle to={'/docs/' + props.path.split('/')[2]}>
-                {props.path.split('/')[2].replace(/(^|\s)\S/g, function(t) {
+                {props.path.split('/')[2].replace(/(^|\s)\S/g, function (t) {
                   return t.toUpperCase()
                 })}
               </StyledNavTitle>
               <StyledNavTitle to={'/docs/' + props.path.split('/')[2] + '/' + props.path.split('/')[3]}>
                 {props.path.split('/')[3] &&
                   '/ ' +
-                    props.path
-                      .split('/')[3]
-                      .replace(/\d+-/g, '')
-                      .replace(/-/g, ' ')
-                      .replace(/(^|\s)\S/g, function(t) {
-                        return t.toUpperCase()
-                      })}
+                  props.path
+                    .split('/')[3]
+                    .replace(/\d+-/g, '')
+                    .replace(/-/g, ' ')
+                    .replace(/(^|\s)\S/g, function (t) {
+                      return t.toUpperCase()
+                    })}
               </StyledNavTitle>{' '}
             </>
           )}
@@ -250,14 +248,13 @@ const Header = props => {
         </MenuToggle>
         <StyledNav ref={node} open={isMenuOpen}>
           {!isMobile && <Search {...props} />}
-          {isMobile &&
-            (v2Toggle ? <SidebarV2 parent={'/docs/'} {...props} /> : <SidebarV1 parent={'/docs/'} {...props} />)}
+          {isMobile}
           <VersionToggle to={v2Toggle ? '/docs/v1/' : '/docs/v2/'}>
             <VersionLabel toggled={!v2Toggle}>V1</VersionLabel>
             <VersionLabel toggled={v2Toggle}>V2</VersionLabel>
           </VersionToggle>
           <StyledButton type="button" onClick={toggleDarkMode}>
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}s
           </StyledButton>
           <StyledButton fill>
             <a href="https://discord.gg/vYHCcJQFPW">

@@ -9,10 +9,9 @@ export const CardBGImage = styled.span`
   width: 100%;
   height: 100%;
   opacity: 1;
-  background-size: contain;
+  background-size: cover;
   position: absolute;
   left: 0;
-  background-repeat: no-repeat;
 
   top: 0;
   ${({ desaturate }) => desaturate && `filter: saturate(0)`};
@@ -39,7 +38,6 @@ export const CardFade = styled.span`
   /* mix-blend-mode: overlay; */
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.gradientBG};
   /* max-width: 1000px; */
   position: absolute;
   left: 0;

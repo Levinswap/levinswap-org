@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "uniswap.org site",
+  "Description": "levinswap.org site",
   "Outputs": {
     "DeploymentAccessKeyId": {
       "Description": "Access key ID for deploying to the S3 bucket",
@@ -85,12 +85,12 @@
       "Type": "AWS::CertificateManager::Certificate",
       "Description": "The certificate used to secure the CloudFront distribution",
       "Properties": {
-        "DomainName": "uniswap.org",
+        "DomainName": "levinswap.org",
         "ValidationMethod": "DNS",
         "Tags": [
           {
             "Key": "Name",
-            "Value": "uniswap.org"
+            "Value": "levinswap.org"
           },
           {
             "Key": "Stack",
@@ -201,10 +201,10 @@
           }
         ],
         "DistributionConfig": {
-          "Comment": "uniswap.org",
+          "Comment": "levinswap.org",
           "Enabled": true,
           "Aliases": [
-            "uniswap.org"
+            "levinswap.org"
           ],
           "DefaultRootObject": "index.html",
           "HttpVersion": "http2",

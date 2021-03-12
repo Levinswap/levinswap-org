@@ -4,31 +4,48 @@ const menu = [
     sublinks: [
       {
         name: 'App',
+        target: '_blank',
         link: 'https://app.levinswap.org/#/',
-        description: 'Swap tokens and provide liquidity'
+        description: 'Swap Tokens and Provide Liquidity'
       },
       {
         name: 'Analytics',
-        link: 'https://app.levinswap.org/',
-        description: 'Levinswap analytics and historical data'
+        target: '_blank',
+        link: 'https://info.levinswap.org/',
+        description: 'Levinswap Analytics and Historical Data'
       },
       {
         name: 'Token Lists',
+        target: '_blank',
         link: 'https://tokenlists.levinswap.org/',
-        description: 'Levinswap token list standard.'
+        description: 'Levinswap Token List Standard.'
+      },
+      {
+        name: 'Farming',
+        target: '_blank',
+        link: 'https://levinswap.org/',
+        description: 'COMING SOON'
       }
     ]
   },
   {
-    name: 'Developers',
+    name: 'Resources',
     sublinks: [
       {
-        name: 'Documentation',
-        target='_blank',
-        href='https://wiki.levinswap.org/products/exchange/for-developers'
+        name: 'Development',
+        target: '_blank',
+        link: 'https://wiki.levinswap.org/products/exchange/for-developers'
       },
-      { name: 'GitHub', link: 'https://github.com/Levinswap' },
-      { name: 'Whitepaper', link: '/whitepaper.pdf' }
+      {
+        name: 'GitHub',
+        target: '_blank',
+        link: 'https://github.com/Levinswap/levinswap-rg'
+      },
+      {
+        name: 'FAQ',
+        target: '_blank',
+        link: 'https://wiki.levinswap.org/faq'
+      }
     ]
   },
   /*{
@@ -38,37 +55,56 @@ const menu = [
         name: 'UNI Token',
         link: '/blog/uni'
       },
-      { name: 'Forum', link: 'https://gov.uniswap.org/' },
-      { name: 'Voting Portal', link: 'https://app.uniswap.org/#/vote' },
+      { name: 'Forum', link: 'https://gov.Levinswap.org/' },
+      { name: 'Voting Portal', link: 'https://app.Levinswap.org/#/vote' },
       { name: 'Documentation', link: '/docs/v2/governance/overview' }
     ]
   },*/
   {
-    name: 'Community',
+    name: 'Tools',
     sublinks: [
-      { name: 'Discord', link: 'https://discord.gg/vYHCcJQFPW' },
-      { name: 'Twitter', link: 'https://twitter.com/Levinswap' },
-      { name: 'Telegram', link: 'https://t.me/levinswap' }
+      {
+        name: 'Omnibridge',
+        target: '_blank',
+        link: 'https://omni.xdaichain.com/',
+        description: 'Bridge any ERC20 Token'
+      },
+      {
+        name: 'xDai Bridge',
+        target: '_blank',
+        link: 'https://dai-bridge.poa.network/',
+        description: 'Bridge DAI/xDai'
+      },
+      {
+        name: 'Blockscout',
+        target: '_blank',
+        link: 'https://blockscout.com/poa/xdai/',
+        description: 'View Transactions on xDai'
+      }
     ]
   },
   {
-    name: 'About',
+    name: 'Community',
     sublinks: [
       {
-        name: 'Blog',
-        link: '/blog'
+        name: 'Telegram',
+        target: '_blank',
+        link: 'https://t.me/levinswap'
       },
       {
-        name: 'Info',
-        link: '/about'
+        name: 'Discord',
+        target: '_blank',
+        link: 'https://discord.gg/vYHCcJQFPW'
       },
       {
-        name: 'FAQ',
-        link: '/faq'
+        name: 'Twitter',
+        target: '_blank',
+        link: 'https://twitter.com/levinswap'
       },
       {
-        name: 'Logo & Brand',
-        link: '/about#brand'
+        name: 'Medium',
+        target: '_blank',
+        link: 'https://levinswap0.medium.com/'
       }
     ]
   }

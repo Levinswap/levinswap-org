@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Menu from './menu'
 
-import Uni from '../images/uni.inline.svg'
 import MenuIcon from '../images/menu.inline.svg'
 import CloseIcon from '../images/x.inline.svg'
 
@@ -80,30 +79,8 @@ const HeaderText = styled.h2`
   color: ${({ theme }) => theme.textColor} !important;
 `
 
-const StyledTradeLink = styled.a`
-  padding: 0.25rem 0.75rem;
-  background-color: ${({ theme }) => theme.textColor};
-  text-decoration: none;
-  color: ${({ theme }) => theme.invertedTextColor};
-  border-radius: 12px;
-  display: inline-block;
-  transition: transform 0.25s ease;
-  font-weight: 600;
-  font-family: 'GT Haptik Regular';
-
-  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-
-  :hover {
-    transform: translate3d(2px, 2px, 10px);
-  }
-
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
 const StyledButton = styled.button`
-  border: none;
+  border: 0;
   background-color: rgba(0, 0, 0, 0);
   path {
     fill: ${({ theme }) => theme.textColor};
@@ -147,22 +124,6 @@ const MenuToggle = styled.button`
   }
 `
 
-const StyledUni = styled(Uni)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  margin: 0;
-  width: 28px;
-  height: 28px;
-  margin-right: 0.35rem;
-  margin-top: -4px;
-  transform: rotate(0deg);
-  transition: transform 0.2s linear;
-  :hover {
-    transform: rotate(-10deg);
-  }
-`
-
 const StyledCloseIcon = styled(CloseIcon)`
   path {
     stroke: ${({ theme }) => theme.textColor};
@@ -181,7 +142,7 @@ const HideSmall = styled.span`
   }
 `
 
-const Header = props => {
+const Header = () => {
   const matches = useMediaQuery('only screen and (max-width: 1024px)')
   const node = useRef()
   const button = useRef()

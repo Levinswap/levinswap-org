@@ -1,18 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
 import { Button } from '../components/button'
-import Wizard from '../components/wizard'
 import ProtocolData from '../components/protocolData'
 
 import { useDarkMode } from '../contexts/Application'
 
-import { CardBGImage, CardFade, CardNoise, StyledExternalLink } from '../components/utils'
-import { CardBGImage_2 } from '../components/utils_2'
+import { CardBGImage, CardNoise } from '../components/utils'
 
 const BGCard = styled.span`
   width: 100vw;
@@ -37,9 +33,7 @@ const StyledBody = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 12rem;
   margin-bottom: 4rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
   @media (max-width: 960px) {
     margin-bottom: 0;
     padding: 2rem;
@@ -53,8 +47,8 @@ const StyledTitle = styled.div`
   flex-direction: column;
   justify-content: center;
   will-change: transform;
-  margin: 3rem 0 4rem 0;
-  margin-bottom: 12rem;
+  margin: 3rem 0 0 0;
+  margin-bottom: 8rem;
   @media (max-width: 960px) {
     margin: 3rem 0 1rem 0;
     margin-bottom: 4rem;
@@ -94,79 +88,12 @@ const StyledBodySubTitle = styled.h2`
   }
 `
 
-const StyledBodySubText = styled.h3`
-  max-width: 960px;
-  text-align: center;
-  line-height: 160%;
-  @media (max-width: 640px) {
-    text-align: left;
-  }
-`
-
-const StyledBannerImage = styled(Img)`
-  width: 100%;
-  height: 100%;
-  min-width: 260px;
-  max-width: 720px;
-  background-color: none;
-  margin-top: 1rem;
-  border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.shadows.huge};
-  @media (max-width: 960px) {
-    min-width: unset;
-  }
-`
-
-const StyledProductImage = styled(Img)`
-  width: 100%;
-  height: 100%;
-  min-width: 220px;
-  max-width: 220px;
-  background-color: none;
-  border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.shadows.huge};
-
-  /* @media (max-width: 960px) {
-    min-width: 120px;
-    max-width: 120px;
-  } */
-`
-
-const StyledSectionFlex = styled.div`
-  padding: 4rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-
-  @media (max-width: 1024px) {
-    padding: 1rem;
-    margin-top: 0rem;
-    flex-direction: ${({ wrapSmall }) => (!wrapSmall ? 'row' : 'column')};
-  }
-
-  @media (max-width: 960px) {
-    padding: 1rem;
-    margin-top: 0rem;
-    width: 100%;
-    max-width: 450px;
-  }
-
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-  p {
-    margin-bottom: 0.5rem;
-  }
-`
-
 const StyledItemRow = styled.nav`
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 0rem;
+
   width: 100%;
   & > *:not(:first-of-type) {
     margin-top: 12px;
@@ -191,104 +118,15 @@ const StyledItemRow = styled.nav`
 const IndexPage = props => {
   const isDark = useDarkMode()
 
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-      newYear: file(relativePath: { eq: "newyear.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      banner: file(relativePath: { eq: "Banner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      swap: file(relativePath: { eq: "swap.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      info: file(relativePath: { eq: "info.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      socks: file(relativePath: { eq: "socks.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      sybil: file(relativePath: { eq: "sybil.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      tokenlists: file(relativePath: { eq: "tokenlists.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      discord: file(relativePath: { eq: "discord.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      twitter: file(relativePath: { eq: "twitter.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      reddit: file(relativePath: { eq: "reddit.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      discourse: file(relativePath: { eq: "discourse.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout path={props.location.pathname}>
       <BGCard>
         <CardNoise />
         <CardBGImage isDark={isDark} />
-        <CardBGImage_2 isDark={isDark} />
-        <CardFade />
       </BGCard>
       <SEO
         title="Home"
-        path={props.location.pathname}
+        path="Levinswap"
         description={'A fully decentralized protocol for automated liquidity provision on xDai'}
       />
       <StyledBody>
@@ -301,7 +139,7 @@ const IndexPage = props => {
           <StyledItemRow>
             <Button
               style={{
-                background: `linear-gradient(128.17deg, #a27395 -14.78%, #463e53 110.05%)`,
+                background: `linear-gradient(128.17deg, #ce75a5 -1.78%, #885c99 110.05%)`,
                 color: 'white',
                 fontSize: '20px'
               }}
@@ -334,8 +172,6 @@ const IndexPage = props => {
         </StyledTitle>
         <ProtocolData />
 
-        <DeveloperSection data={data} props={props} />
-        <ProductsSection data={data} props={props} />
       </StyledBody>
       <BG />
     </Layout>
@@ -343,99 +179,3 @@ const IndexPage = props => {
 }
 
 export default IndexPage
-
-const StyledSectionTitle = styled.h1`
-  font-size: 48px;
-  white-space: wrap;
-  overflow-wrap: normal;
-  max-width: 900px;
-  text-align: center;
-  font-family: 'GT Haptik Regular';
-  margin-top: 10rem;
-
-  @media (max-width: 960px) {
-    width: 100%;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    max-width: 600px;
-    margin-top: 4rem;
-  }
-  @media (max-width: 640px) {
-    width: 100%;
-    font-weight: 400;
-    margin-top: 4rem;
-    text-align: left;
-  }
-`
-
-const DeveloperSection = props => {
-  return (
-    <>
-      <StyledSectionTitle>New era for .</StyledSectionTitle>
-      <StyledBodySubText>
-        The Uniswap protocol empowers developers, liquidity providers and traders to participate in a financial
-        marketplace that is open and accessible to all.
-      </StyledBodySubText>
-      <StyledBannerImage fadeIn={false} fluid={props.data.banner.childImageSharp.fluid} />
-    </>
-  )
-}
-
-const ProductsSection = props => {
-  return (
-    <>
-      <StyledSectionTitle>A suite of tools for a tokenized world.</StyledSectionTitle>
-      <StyledBodySubText>
-        We build state of the art open source apps to access the Uniswap protocol and contribute to the world of
-        decentralized finance.
-      </StyledBodySubText>
-      <StyledItemRow>
-        <StyledExternalLink href={'https://socks.uniswap.org'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.socks.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://info.uniswap.org'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.info.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://app.uniswap.org'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.swap.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://tokenlists.org'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.tokenlists.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://sybil.org'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.sybil.childImageSharp.fluid} />
-        </StyledExternalLink>
-      </StyledItemRow>
-
-      <StyledSectionTitle>Superpowers for DEFI developers.</StyledSectionTitle>
-      <StyledBodySubText>
-        Check out the <Link to="/docs/v2/">documentation</Link>, the{' '}
-        <Link to="/docs/v2/javascript-SDK/quick-start/">quick start</Link> or a guide below to integrate your project
-        with thousands of tokens and billions in liquidity.
-      </StyledBodySubText>
-      <StyledSectionFlex style={{ paddingBottom: '0px', paddingTop: '1rem' }}>
-        <Wizard />
-      </StyledSectionFlex>
-
-      <StyledSectionTitle>A global community.</StyledSectionTitle>
-      <StyledBodySubText>
-        Learn more about Uniswap, chat with the team, others in the community, and have your say in shaping the future
-        of the Uniswap protocol.
-      </StyledBodySubText>
-      <StyledItemRow>
-        <StyledExternalLink href={'https://discord.gg/FCfyBSbCU5'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.discord.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://twitter.com/Uniswap'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.twitter.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://gov.uniswap.org/'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.discourse.childImageSharp.fluid} />
-        </StyledExternalLink>
-        <StyledExternalLink href={'https://www.reddit.com/r/Uniswap'} target="_blank">
-          <StyledProductImage fadeIn={false} fluid={props.data.reddit.childImageSharp.fluid} />
-        </StyledExternalLink>
-      </StyledItemRow>
-    </>
-  )
-}

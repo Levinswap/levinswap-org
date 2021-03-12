@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, title, path }) {
+function SEO({ lang, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,33 +26,19 @@ function SEO({ description, lang, title, path }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const uniTitle = 'Uniswap'
+  const metaDescription = "A fully decentralized protocol for automated liquidity provision on xDai"
 
   return (
     <Helmet
       htmlAttributes={{
         lang
       }}
-      title={title}
-      titleTemplate={`${site.siteMetadata.title} | %s`}
+      title="Levinswap"
     >
       <meta charSet="utf-8" />
       <html lang="en" />
-      <meta name="title" content={title} />
-      <meta name="description" content={metaDescription} />
-      <meta name="keywords" content={title}></meta>
-
-      <meta property="og:title" content={uniTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content={'website'} />
-      <meta property="og:url" content={site.siteMetadata.siteUrl + path} />
-      <meta property="og:image" content={`${site.siteMetadata.siteUrl}${path ? path : '/images/'}twitter-card.jpg`} />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content="@UniswapProtocol"></meta>
-      <meta name="twitter:site" content="@UniswapProtocol" />
-      <meta property="og:image" content={`${site.siteMetadata.siteUrl}${path ? path : '/images/'}twitter-card.jpg`} />
+      <meta name="title" content={'Levinswap'} />
+      <meta name="description" content={'A fully decentralized protocol for automated liquidity provision on xDai'} />
 
       <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
     </Helmet>
