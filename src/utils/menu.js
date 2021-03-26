@@ -23,8 +23,8 @@ const menu = [
       {
         name: 'Farming',
         target: '_blank',
-        link: 'https://levinswap.org/',
-        description: 'COMING SOON'
+        link: 'https://farm.levinswap.org/',
+        description: 'LIVE'
       }
     ]
   },
