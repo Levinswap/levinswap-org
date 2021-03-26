@@ -149,6 +149,17 @@ const IndexPage = props => {
               Use Levinswap
             </Button>
             <Button
+              style={{
+                background: `linear-gradient(128.17deg, #ce75a5 -1.78%, #885c99 110.05%)`,
+                color: 'white',
+                fontSize: '20px'
+              }}
+              target="_blank"
+              href="https://farm.levinswap.org/"
+            >
+              Farm LEVIN
+            </Button>
+            <Button
               outlined
               target="_blank"
               href="https://wiki.levinswap.org/"
