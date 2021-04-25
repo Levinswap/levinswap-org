@@ -225,7 +225,7 @@ const ProtocolData = () => {
         </BigNumbers>
         <BigNumbers>
           <span>
-            5
+            7
           </span>
           <p style={{ fontSize: '14px' }}># of Farming Pairs</p>
         </BigNumbers>

@@ -158,6 +158,16 @@ const IndexPage = props => {
               href="https://farm.levinswap.org/"
             >
               Farm LEVIN
+            </Button><Button
+              style={{
+                background: `linear-gradient(128.17deg, #ce75a5 -1.78%, #885c99 110.05%)`,
+                color: 'white',
+                fontSize: '20px'
+              }}
+              target="_blank"
+              href="https://stake.levinswap.org/"
+            >
+              Stake LEVIN
             </Button>
             <Button
               outlined
